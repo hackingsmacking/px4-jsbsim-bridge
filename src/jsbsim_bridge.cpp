@@ -189,8 +189,8 @@ void JSBSimBridge::Run() {
       _mavlink_interface->UpdateAirspeed(_airspeed_sensor->getData());
     }
 
-    // Send Mavlink HIL_SENSOR message
-    _mavlink_interface->SendSensorMessages(simtime * 1e6);
+    // Send Mavlink HIL_SENSOR message, casting to uint64
+    _mavlink_interface->SendSensorMessages(static_cast<uint64_t>(simtime * 1e6));
   }
 
   // Send Mavlink HIL_GPS message

@@ -132,7 +132,7 @@ class MavlinkInterface {
   void open();
   void close();
   void Load();
-  void SendSensorMessages(int time_usec);
+  void SendSensorMessages(uint64_t time_usec);
   void SendGpsMessages(const SensorData::Gps &data);
   void UpdateBarometer(const SensorData::Barometer &data);
   void UpdateAirspeed(const SensorData::Airspeed &data);
